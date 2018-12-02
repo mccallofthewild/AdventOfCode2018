@@ -8,3 +8,22 @@ const calculateFrequency = _ => document.body.innerText.split('\n').reduce(
   0
 )
 ```
+
+## Day 2: (incomplete)
+```javascript 
+( _ => {
+	let firstRepeatedFrequency;
+	let frequency = 0;
+	let previousFrequencies = new Set([frequency]);
+	for (let line of document.body.innerText.split('\n')) {
+		frequency = eval(frequency + line);
+		if (previousFrequencies.has(frequency)) {
+			firstRepeatedFrequency = frequency;
+			break;
+		}
+		previousFrequencies.add(frequency);
+  }
+	console.log(previousFrequencies)
+	console.log(firstRepeatedFrequency)
+} )()
+```
